@@ -16,10 +16,11 @@ while tentativas < 2:
     print('=====(1)Sao Paulo\n=====(2)Ceara\n=====(3)Recife\n=====(4)Alagoas\n=====(5)Rio Grande do Sul\n=====(6)Rio de Janeiro\n')
     print('Os numeros sao:\n===== 1\n===== 45\n===== 100\n===== 19\n===== 519\n===== 200\n')
 
-    if tentativas ==0:
+    if tentativas == 0:
         nome = input('Informe o seu nome\nR:')
 
-    tipo_de_jogo =int(input('qual o tipo e sorteio que você pretende jogar? \ndigite 1 para cidade da Sorte ou 2 para numero da sorte'))
+    tipo_de_jogo = int(input(
+        'qual o tipo e sorteio que você pretende jogar? \ndigite 1 para cidade da Sorte ou 2 para numero da sorte'))
 
     if tipo_de_jogo == 1:
         cidade_escolhida = int(input('escolha a cidade'))
