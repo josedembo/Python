@@ -7,6 +7,9 @@ while sair_programa == 0:
     print(f'{cal:=^40}')
     opcao = input('O programa a seguir  mostra a tabuada e possui uma pequena calculadora\n'
                   'digite:  \n(1) para calculadora  \n(2) para a tabuada \n(0)para sair do programa ')
+    if not opcao.isnumeric():
+        print('Você precisa digitar um número')
+        continue
 
     opcao = int(opcao)
 
@@ -17,10 +20,13 @@ while sair_programa == 0:
     div = 0
     tamanho = 0
     if opcao == 1:
-        qtd_valores = input('Você escoheu calculadora, quantos valores prentendes digitar ')
+        qtd_valores = input('Você escolheu calculadora, quantos valores prentende digitar ')
+        if not qtd_valores.isnumeric():
+            print('Você precisa digitar um número')
+            continue
         qtd_valores = int(qtd_valores)
+        cont = 1
         while qtd_valores > 0:
-            cont = 1
             valor = input(f'informe o {cont}º valor ')
             valor = int(valor)
             matriz.append(valor)
@@ -37,25 +43,40 @@ while sair_programa == 0:
                 x += 1
             print(f'soma = {soma}')
         elif sinal == '-':
+            tamanho = len(matriz)
             x = 0
             sub = 0
             while x < tamanho:
-                sub = sub + matriz[x]
+                if x == 0:
+                    sub = sub + matriz[x]
+                else:
+                    sub = sub - matriz[x]
+                x += 1
             print(f'subtração = {sub}')
         elif sinal == '*':
+            tamanho = len(matriz)
             x = 0
-            mult = 0
+            mult = 1
             while x < tamanho:
-                mult = mult + matriz[x]
+                mult = mult * matriz[x]
+                x += 1
             print(f'multiplicaçao = {mult}')
         elif sinal == '/':
+            tamanho = len(matriz)
             x = 0
             div = 0
             while x < tamanho:
-                div = div + matriz[x]
+                if x == 0:
+                    div = div + matriz[x]
+                else:
+                    div = div / matriz[x]
+                x += 1
             print(f'divisão = {div}')
     elif opcao == 2:
         tab = input('informe a tabuada que pretende verificar: ')
+        if not tab.isnumeric():
+            print('Você precisa digitar um número')
+            continue
 
         if tab.isdigit():
             tab = int(tab)
