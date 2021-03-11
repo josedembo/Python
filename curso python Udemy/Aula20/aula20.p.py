@@ -19,7 +19,7 @@ x1 = 0
 while x1 < 10:
     y = 0
     while y < 5:
-         print(f'x vale {x1}, y vale {y}')
+         print(f'{x1}.{y}')
          y += 1
     print('=' * 20)
     x1 += 1
