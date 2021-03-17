@@ -1,4 +1,7 @@
-secriword = 'Wonderfull'
+import random
+palavras = ['Wonderfull','Love','Felicidade','Porta','Prateado','Domingo','Destino']
+secriword = random.choice(palavras)
+
 digitadas = []
 
 chances = 4
